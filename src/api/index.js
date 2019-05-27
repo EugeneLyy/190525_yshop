@@ -5,13 +5,15 @@
 // 1、根据经纬度获取位置详情
 import ajax from './ajax'
 
-export const reqAddress = (geohash) => ajax(`/position/${geohash}`)
+// const BASE_URL = 'http://localhost:4000'
+const BASE_URL = '/api'
+export const reqAddress = (geohash) => ajax(`${BASE_URL}/position/${geohash}`)
 
 // 2、获取食品分类列表
-export const reqFoodTypes = () => ajax(`/index_category`)
+export const reqFoodTypes = () => ajax(`${BASE_URL}/index_category`)
 
 // 3、根据经纬度获取商铺列表
-export const  reqShops = (longitude,latitude) => ajax(`/shops`,{longitude,latitude})
+export const reqShops = (longitude, latitude) => ajax(`${BASE_URL}/shops`, {longitude, latitude})
 // 4、根据经纬度和关键字搜索商铺列表
 // 5、获取一次性验证码
 // 6、用户名密码登陆
@@ -19,6 +21,6 @@ export const  reqShops = (longitude,latitude) => ajax(`/shops`,{longitude,latitu
 // 8、手机号验证码登陆
 // 9、根据会话获取用户信息
 // 10、用户登出
-/*export function  () {
+/* export function  () {
 
-}*/
+} */

@@ -7,8 +7,14 @@
 
 <script>
   import FooterGuide from './common/FooterGudie/FooterGuide'
+  import {reqFoodTypes} from './api'
 
   export default {
+
+    async mounted () {
+      const result = await reqFoodTypes()
+      console.log(result)
+    },
     components: {
       FooterGuide
     }
